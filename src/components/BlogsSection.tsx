@@ -26,6 +26,14 @@ const BlogsSection = () => {
       date: "March 10, 2024",
       url: "https://uppupranaysai.wordpress.com/",
       category: "DevOps"
+    },
+    {
+      title: "Cloud Innovation Strategies",
+      excerpt: "Discover cutting-edge approaches to cloud transformation and digital innovation.",
+      author: "Sumanth",
+      date: "March 8, 2024",
+      url: "https://bandarusaisumanth.wordpress.com/",
+      category: "Innovation"
     }
   ];
 
@@ -44,7 +52,7 @@ const BlogsSection = () => {
         </div>
 
         {/* Blog Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {blogs.map((blog, index) => (
             <article
               key={blog.title}

@@ -172,4 +172,8 @@
   .animate-scroll {
     animation: scroll-left 30s linear infinite;
   }
+
+  .animate-scroll-slow {
+    animation: scroll-left 60s linear infinite;
+  }
 }

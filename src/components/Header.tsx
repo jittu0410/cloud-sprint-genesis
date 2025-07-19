@@ -13,7 +13,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-slate-200/95 backdrop-blur-md border-b border-border/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -31,7 +31,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+                className="text-slate-800 hover:text-primary transition-colors duration-300 font-medium"
               >
                 {item.name}
               </a>
@@ -65,7 +65,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-300"
+                  className="block px-3 py-2 text-slate-800 hover:text-primary transition-colors duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
