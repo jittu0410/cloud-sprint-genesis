@@ -4,8 +4,16 @@ import { ArrowRight, Cloud, Zap, Shield } from 'lucide-react';
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center cloud-bg overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-hero opacity-90"></div>
+      {/* Custom Cloud Network Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/cloud-bg.jpg"
+          alt="Cloud Network Background"
+          className="w-full h-full object-cover"
+          style={{ pointerEvents: 'none' }}
+        />
+      </div>
+      <div className="absolute inset-0 z-10 bg-gradient-hero opacity-80"></div>
       
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -51,16 +59,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button className="btn-hero group">
-              Explore Services
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="outline" className="px-8 py-4 rounded-xl font-semibold text-lg border-primary/30 text-foreground hover:bg-primary/10">
-              Watch Demo
-            </Button>
-          </div>
+
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-border/50">

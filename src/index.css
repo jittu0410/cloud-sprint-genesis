@@ -1,3 +1,139 @@
+/* Animated thick glowing gradient border for buttons */
+.btn-animated-glow {
+  position: relative;
+  border: 4px solid;
+  border-image: linear-gradient(90deg, #a259ff, #f72585, #3a86ff, #a259ff) 1;
+  border-radius: 1.1rem;
+  background: #181a2a;
+  color: #fff;
+  box-shadow: 0 0 0 0 #a259ff, 0 0 24px 6px #a259ff55;
+  transition: box-shadow 0.3s, transform 0.18s, background 0.18s;
+  z-index: 1;
+  overflow: hidden;
+}
+.btn-animated-glow:after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 1.2rem;
+  z-index: -1;
+  background: linear-gradient(90deg, #a259ff, #f72585, #3a86ff, #a259ff 100%);
+  filter: blur(12px) brightness(1.2);
+  opacity: 0.5;
+  animation: btn-pulse-glow 2.2s ease-in-out infinite;
+  pointer-events: none;
+  transition: opacity 0.2s, filter 0.2s;
+}
+.btn-animated-glow:hover, .btn-animated-glow:focus {
+  box-shadow: 0 0 0 4px #a259ff, 0 0 48px 16px #a259ffcc, 0 0 80px 32px #f72585cc;
+  background: linear-gradient(135deg, #23223a 60%, #2d1e4f 100%);
+  transform: scale(1.06);
+}
+.btn-animated-glow:active {
+  box-shadow: 0 0 0 2px #a259ff, 0 0 12px 2px #a259ff88;
+  transform: scale(0.97);
+}
+@keyframes btn-pulse-glow {
+  0%, 100% {
+    filter: blur(12px) brightness(1.1);
+    opacity: 0.5;
+  }
+  50% {
+    filter: blur(20px) brightness(1.5);
+    opacity: 0.9;
+  }
+}
+/* Simple thick background glow for buttons */
+.btn-simple-glow {
+  position: relative;
+  border-radius: 1rem;
+  box-shadow: 0 0 0 4px #a259ff, 0 0 16px 6px #a259ff88, 0 0 32px 12px #f7258588;
+  background: #23223a;
+  color: #fff;
+  border: none;
+  transition: box-shadow 0.22s, background 0.18s, color 0.18s, transform 0.18s;
+}
+.btn-simple-glow:hover, .btn-simple-glow:focus {
+  box-shadow: 0 0 0 6px #a259ff, 0 0 32px 12px #a259ffcc, 0 0 48px 20px #f72585cc;
+  background: #2d1e4f;
+  transform: scale(1.04);
+}
+.btn-simple-glow:active {
+  box-shadow: 0 0 0 3px #a259ff, 0 0 8px 2px #a259ff88;
+  transform: scale(0.97);
+}
+/* Glowing Border for Buttons (matches sample image) */
+.btn-glow-border {
+  position: relative;
+  z-index: 1;
+  border-radius: 1.2rem;
+  background: #23223a;
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 0 2.5px #a259ff, 0 0 16px 2px #a259ff88, 0 0 32px 4px #f7258588;
+  transition: box-shadow 0.25s, background 0.18s, color 0.18s;
+}
+.btn-glow-border:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.2rem;
+  padding: 2px;
+  background: linear-gradient(90deg, #a259ff, #f72585, #7209b7, #3a86ff, #a259ff 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  filter: blur(1.5px);
+  opacity: 0.85;
+  pointer-events: none;
+}
+.btn-glow-border:hover, .btn-glow-border:focus {
+  box-shadow: 0 0 0 3px #a259ff, 0 0 24px 4px #a259ffcc, 0 0 48px 8px #f72585cc;
+  background: #23223aee;
+}
+.btn-glow-border:active {
+  box-shadow: 0 0 0 2px #a259ff, 0 0 12px 2px #a259ff88;
+}
+/* Seamless infinite scroll for services images */
+.scroll-track {
+  display: flex;
+  width: max-content;
+  animation: seamless-scroll 60s linear infinite;
+  align-items: center;
+}
+
+.scroll-image-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.5);
+  border-radius: 1rem;
+  border: 1px solid var(--border-color, #e5e7eb);
+  overflow: hidden;
+  height: 11rem;
+  width: 20rem;
+  margin-right: 5mm;
+}
+.scroll-image-wrapper:last-child {
+  margin-right: 0;
+}
+
+.scroll-image {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.3s;
+}
+.scroll-image:hover {
+  transform: scale(1.04);
+}
+
+@keyframes seamless-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;

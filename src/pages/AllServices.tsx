@@ -1,10 +1,11 @@
 import { Cloud, Database, Server, Brain, Shield, BarChart3, GitBranch, Archive, Zap, Network, Container, Activity, Layers, HardDrive, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const AllServices = () => {
+  const navigate = useNavigate();
   const services = [
     { 
       icon: Cloud, 
@@ -120,9 +121,15 @@ const AllServices = () => {
       <main className="pt-20">
         {/* Hero Section */}
         <section className="py-20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-secondary opacity-20"></div>
-          
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Cloud Network Background Image */}
+          <img
+            src="/cloud-bg.jpg"
+            alt="Cloud Network Background"
+            className="absolute inset-0 w-full h-full object-cover opacity-90 z-0"
+            style={{ pointerEvents: 'none' }}
+          />
+          <div className="absolute inset-0 bg-gradient-hero opacity-80 z-10"></div>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
             <div className="text-center mb-16">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 Our Complete <span className="gradient-text">Service Portfolio</span>
@@ -182,7 +189,7 @@ const AllServices = () => {
                   ← Back to Home
                 </Button>
               </Link>
-              <Button className="btn-hero">
+              <Button className="btn-hero" onClick={() => navigate('/support')}>
                 Contact Us for Custom Solutions
               </Button>
             </div>

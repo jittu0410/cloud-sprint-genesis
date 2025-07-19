@@ -39,8 +39,16 @@ const BlogsSection = () => {
   ];
 
   return (
-    <section id="blogs" className="py-20 bg-gradient-secondary/10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="blogs" className="relative py-20 bg-gradient-secondary/10 overflow-hidden">
+      {/* Cloud Network Background Image */}
+      <img
+        src="/cloud-bg.jpg"
+        alt="Cloud Network Background"
+        className="absolute inset-0 w-full h-full object-cover opacity-90 z-0"
+        style={{ pointerEvents: 'none' }}
+      />
+      <div className="absolute inset-0 bg-gradient-hero opacity-80 z-10"></div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">

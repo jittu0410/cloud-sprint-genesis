@@ -18,17 +18,21 @@ const Footer = () => {
   ];
 
   return (
-    <footer id="contact" className="bg-card/50 backdrop-blur-sm border-t border-border">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer id="contact" className="relative bg-card/50 backdrop-blur-sm border-t border-border overflow-hidden">
+      {/* Cloud Network Background Image */}
+      <img
+        src="/cloud-bg.jpg"
+        alt="Cloud Network Background"
+        className="absolute inset-0 w-full h-full object-cover opacity-90 z-0"
+        style={{ pointerEvents: 'none' }}
+      />
+      <div className="absolute inset-0 bg-gradient-hero opacity-80 z-10"></div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
             <div>
-              <img
-                src="/lovable-uploads/9049b2d2-59df-4d9a-a7f0-2931346bf2a8.png"
-                alt="Technavan Logo"
-                className="h-12 w-auto mb-4"
-              />
+              <div className="text-2xl font-bold mb-4 text-slate-900">Techiravan</div>
               <p className="text-muted-foreground">
                 Leading provider of innovative cloud services and solutions, 
                 empowering businesses to scale and succeed in the digital era.
