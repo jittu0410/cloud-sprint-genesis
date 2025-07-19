@@ -1,4 +1,5 @@
 import { Cloud, Database, Server, Brain, Shield, BarChart3, GitBranch, Archive, Zap, Network, Container, Activity, Layers, HardDrive, Settings } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import cloudServicesImage from '@/assets/cloud-services-icons.png';
 
 const ServicesSection = () => {
@@ -179,9 +180,11 @@ const ServicesSection = () => {
 
         {/* View All Services Button */}
         <div className="text-center mt-12">
-          <button className="btn-hero">
-            View All Services
-          </button>
+          <Link to="/services">
+            <button className="btn-hero">
+              View All Services
+            </button>
+          </Link>
         </div>
       </div>
     </section>

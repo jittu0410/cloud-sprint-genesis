@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowUpRight, Calendar, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const BlogsSection = () => {
   const blogs = [
@@ -101,9 +102,11 @@ const BlogsSection = () => {
 
         {/* View All Blogs Button */}
         <div className="text-center mt-12">
-          <Button className="btn-hero">
-            View All Blogs
-          </Button>
+          <Link to="/blogs">
+            <Button className="btn-hero">
+              View All Blogs
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
