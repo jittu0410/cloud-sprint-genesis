@@ -149,9 +149,10 @@ const AllServices = () => {
               {services.map((service, index) => (
                 <div
                   key={service.name}
-                  className="cloud-card card-3d group relative overflow-hidden h-80"
+                  className="btn-glow-border group relative overflow-hidden h-80 p-6 transition-all duration-500 hover:transform hover:scale-105"
                   style={{ 
                     animationDelay: `${index * 0.1}s`,
+                    boxShadow: '0 10px 30px -10px rgba(162, 89, 255, 0.3), 0 0 20px rgba(162, 89, 255, 0.1)',
                     ...(service.bgImage ? {
                       backgroundImage: `url(${service.bgImage})`,
                       backgroundSize: 'cover',

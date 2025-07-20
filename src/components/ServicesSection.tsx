@@ -44,7 +44,7 @@ const ServicesSection = () => {
         </div>
         <div className="flex justify-center mb-16">
           <a href="/services">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition-all duration-200">
+            <button className="btn-animated-glow font-semibold px-8 py-3 rounded-lg">
               View All Services
             </button>
           </a>
