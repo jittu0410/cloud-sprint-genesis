@@ -5,14 +5,6 @@ const ServicesSection = () => {
     <section
       id="services"
       className="py-20 relative overflow-hidden"
-      style={{
-        backgroundImage: 'url(/assets/cloud-bg.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundColor: '#181a2a',
-        zIndex: 0,
-      }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-[#181a2a99] to-[#181a2a66] opacity-10 z-10 pointer-events-none"></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

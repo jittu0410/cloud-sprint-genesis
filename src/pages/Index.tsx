@@ -11,7 +11,17 @@ import Footer from '@/components/Footer';
 const Index = () => {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen bg-background">
+    <div 
+      className="min-h-screen bg-background relative"
+      style={{
+        backgroundImage: 'url(/assets/cloud-bg.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
+      <div className="absolute inset-0 bg-black/40 z-0"></div>
+      <div className="relative z-10">
       <Header />
       <Hero />
       <ServicesSection />
@@ -30,6 +40,7 @@ const Index = () => {
         </div>
       </section>
       <Footer />
+      </div>
     </div>
   );
 };

@@ -99,7 +99,7 @@
 .scroll-track {
   display: flex;
   width: max-content;
-  animation: seamless-scroll 60s linear infinite;
+  animation: seamless-scroll 90s linear infinite;
   align-items: center;
 }
 
@@ -112,8 +112,8 @@
   border-radius: 1rem;
   border: 1px solid var(--border-color, #e5e7eb);
   overflow: hidden;
-  height: 11rem;
-  width: 20rem;
+  height: 14rem;
+  width: 25rem;
   margin-right: 5mm;
 }
 .scroll-image-wrapper:last-child {
@@ -124,7 +124,7 @@
   object-fit: contain;
   height: 100%;
   width: 100%;
-  transition: transform 0.3s;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .scroll-image:hover {
   transform: scale(1.04);
@@ -212,7 +212,7 @@
 @layer components {
   /* Cloud Service Cards */
   .cloud-card {
-    @apply bg-card/50 backdrop-blur-sm border border-border rounded-xl p-6 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl;
+    @apply bg-slate-200/80 text-slate-900 backdrop-blur-sm border border-slate-300/50 rounded-xl p-6 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-lg;
   }
 
   /* Hero Button */

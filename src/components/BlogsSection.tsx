@@ -70,21 +70,21 @@ const BlogsSection = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Category Badge */}
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-slate-300/50 text-blue-800 text-sm font-medium mb-4">
                 {blog.category}
               </div>
 
               {/* Blog Content */}
-              <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-800 transition-colors">
                 {blog.title}
               </h3>
               
-              <p className="text-muted-foreground mb-6 line-clamp-3">
+              <p className="text-slate-700 mb-6 line-clamp-3">
                 {blog.excerpt}
               </p>
 
               {/* Meta Information */}
-              <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
+              <div className="flex items-center justify-between text-sm text-slate-600 mb-4">
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center">
                     <User className="w-4 h-4 mr-1" />
@@ -99,10 +99,10 @@ const BlogsSection = () => {
 
               {/* Read More Link */}
               <div className="flex items-center justify-between">
-                <span className="text-primary font-medium group-hover:translate-x-2 transition-transform">
+                <span className="text-blue-600 font-medium group-hover:translate-x-2 transition-transform">
                   Read More
                 </span>
-                <ArrowUpRight className="w-5 h-5 text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                <ArrowUpRight className="w-5 h-5 text-blue-600 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </div>
             </article>
           ))}

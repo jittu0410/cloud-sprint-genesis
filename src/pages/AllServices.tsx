@@ -149,29 +149,19 @@ const AllServices = () => {
               {services.map((service, index) => (
                 <div
                   key={service.name}
-                  className="cloud-card card-3d group relative overflow-hidden h-80"
-                  style={{ 
-                    animationDelay: `${index * 0.1}s`,
-                    ...(service.bgImage ? {
-                      backgroundImage: `url(${service.bgImage})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                    } : {})
-                  }}
+                  className="cloud-card card-3d group relative flex flex-col h-80"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  {service.bgImage && (
-                    <div className="absolute inset-0 bg-background/90 backdrop-blur-sm"></div>
-                  )}
                   <div className="relative z-10 h-full flex flex-col">
                     <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors">
-                        <service.icon className="w-6 h-6 text-primary" />
+                      <div className="w-12 h-12 bg-slate-300/50 rounded-xl flex items-center justify-center mr-4 group-hover:bg-slate-400/50 transition-colors">
+                        <service.icon className="w-6 h-6 text-blue-600" />
                       </div>
-                      <h3 className="text-xl font-semibold line-clamp-2">{service.name}</h3>
+                      <h3 className="text-xl font-semibold line-clamp-2 text-slate-900 group-hover:text-blue-800 transition-colors">{service.name}</h3>
                     </div>
-                    <p className="text-muted-foreground mb-4">{service.description}</p>
-                    <p className="text-sm text-muted-foreground/80 mb-6 flex-grow">{service.longDescription}</p>
-                    <div className="flex items-center text-primary font-medium group-hover:translate-x-2 transition-transform">
+                    <p className="text-slate-600 mb-4">{service.description}</p>
+                    <p className="text-sm text-slate-500 mb-6 flex-grow">{service.longDescription}</p>
+                    <div className="flex items-center text-blue-600 font-medium group-hover:translate-x-2 transition-transform">
                       Learn More 
                       <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
