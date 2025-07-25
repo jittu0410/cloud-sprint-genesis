@@ -111,9 +111,9 @@ const BlogsSection = () => {
         {/* View All Blogs Button */}
         <div className="text-center mt-12">
           <Link to="/blogs">
-            <Button className="btn-hero">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition-all duration-200">
               View All Blogs
-            </Button>
+            </button>
           </Link>
         </div>
       </div>
