@@ -1,4 +1,4 @@
-import React from 'react';
+import Spline from '@splinetool/react-spline';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -40,32 +40,37 @@ const Support = () => {
       <Header />
       <main className="flex-1 w-full bg-slate-100/90 py-12 px-4 md:px-0 mt-24">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 text-slate-900">Schedule A Demo</h1>
-          <div className="flex flex-col md:flex-row gap-10 items-start justify-between mt-8">
-            {/* Left: Features & Benefits */}
-            <div className="flex-1 min-w-[300px]">
-              <div className="flex flex-col gap-6 mb-8">
-                <div className="flex items-center gap-3">
-                  <span className="text-3xl"></span>
-                  <span className="text-lg font-medium text-slate-700">See the benefits for yourself in real-time</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-3xl">🆓</span>
-                  <span className="text-lg font-medium text-slate-700">Free with no commitment</span>
-                </div>
-              </div>
-              <hr className="my-6 border-slate-300" />
-              <h2 className="text-2xl font-bold mb-4 text-slate-900">How Our Cloud Solutions Help Your Company:</h2>
-              <ul className="list-disc pl-6 text-slate-700 text-base space-y-2">
-                <li>Accelerate your cloud adoption journey</li>
-                <li>Automate and streamline IT workflows</li>
-                <li>Gain visibility and control over cloud spend</li>
-                <li>Reduce hours spent on manual tasks</li>
-                <li>Easy to use, secure, and scalable</li>
-              </ul>
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-4 text-slate-900">Schedule A Demo</h1>
+          
+          {/* Feature Highlights */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 px-4">
+            <div className="text-center">
+              <div className="text-3xl mb-2">🚀</div>
+              <p className="font-medium text-blue-900">99.99% Uptime SLA</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl mb-2">🛡</div>
+              <p className="font-medium text-blue-900">SOC 2 Type II Certified</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl mb-2">🌐</div>
+              <p className="font-medium text-blue-900">Deployed Across 10+ Regions</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl mb-2">💡</div>
+              <p className="font-medium text-blue-900">AI-Powered Cloud Optimization</p>
+            </div>
+          </div>
+          <div className="flex flex-col lg:flex-row justify-between mt-8">
+            {/* Left: Spline Design */}
+            <div className="lg:w-[50%] h-[500px] overflow-hidden rounded-lg -ml-8">
+              <Spline 
+                scene="https://prod.spline.design/4AnF6Hp3RN3Larwo/scene.splinecode"
+                style={{ width: '100%', height: '100%' }}
+              />
             </div>
             {/* Right: Demo Form */}
-            <form onSubmit={handleSubmit} className="flex-1 min-w-[320px] bg-blue-500/90 rounded-xl shadow-xl p-8 flex flex-col gap-4">
+            <form onSubmit={handleSubmit} className="lg:w-[45%] min-w-[320px] bg-gray-800/90 text-white rounded-xl shadow-xl p-8 flex flex-col gap-4">
               <input
                 type="text"
                 name="name"
@@ -124,8 +129,23 @@ const Support = () => {
                 {loading ? 'SENDING...' : 'REQUEST A DEMO'}
               </Button>
               {success && (
-                <div className="text-green-700 font-semibold text-center mt-2">Thank you! Your request has been sent.</div>
+                <div className="text-green-400 font-semibold text-center mt-2">Thank you! Your request has been sent.</div>
               )}
+              {/* Feature Highlights */}
+              <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm text-gray-300">
+                <div className="flex items-center gap-1">
+                  <span>⚡</span>
+                  <span>Faster Deployments</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span>🔐</span>
+                  <span>Enterprise Security</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span>🌍</span>
+                  <span>Global Cloud Presence</span>
+                </div>
+              </div>
             </form>
           </div>
         </div>

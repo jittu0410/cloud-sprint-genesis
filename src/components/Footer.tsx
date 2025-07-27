@@ -1,13 +1,23 @@
 import { Mail, Phone, MapPin, Twitter, Linkedin, Github, Facebook } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const services = [
-    'Cloud Infrastructure',
-    'AI & Machine Learning',
-    'Cybersecurity',
-    'Data Analytics',
-    'DevOps Solutions',
-    'API Management'
+    'Cloud Migration Services',
+    'DevOps Services',
+    'Kubernetes Consulting & Managed Services',
+    'Cloud Optimization Consulting',
+    'SRE (24/7)',
+    'AI/Gen AI Cloud Services',
+    'Multi-cloud & Hybrid Cloud Management',
+    'FinOps & Cloud Cost Optimize',
+    'Edge Computing',
+    'Low Code and No Code Cloud Solution',
+    'Data Security',
+    'Disaster Recovery and Backup',
+    'Serverless Architecture/Computing',
+    'Quantum Computing',
+    'Rise of Industry-Specific Cloud Platform'
   ];
 
   const socialLinks = [
@@ -32,7 +42,9 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div>
-              <div className="text-2xl font-bold mb-4 text-slate-900">Techiravan</div>
+              <h2 className="text-lg font-semibold mb-6 text-white">
+                Techiravan
+              </h2>
               <p className="text-muted-foreground">
                 Leading provider of innovative cloud services and solutions, 
                 empowering businesses to scale and succeed in the digital era.
@@ -68,12 +80,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
-                  <a
-                    href="#services"
+                  <Link
+                    to="/services"
                     className="text-muted-foreground hover:text-primary transition-colors duration-300"
                   >
                     {service}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

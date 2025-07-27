@@ -139,12 +139,12 @@ const AllBlogs = () => {
                 .map((blog, index) => (
                 <article
                   key={`${blog.title}-${index}`}
-                  className="cloud-card card-3d group cursor-pointer"
+                  className="cloud-card card-3d group cursor-pointer bg-white/95 hover:bg-white transition-all duration-300 shadow-lg hover:shadow-2xl rounded-xl p-6 border border-white/20"
                   onClick={() => window.open(blog.url, '_blank')}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {/* Category Badge */}
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-slate-300/50 text-blue-800 text-sm font-medium mb-4">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-4 group-hover:bg-blue-200 transition-colors">
                     {blog.category}
                   </div>
 
@@ -153,12 +153,12 @@ const AllBlogs = () => {
                     {blog.title}
                   </h3>
                   
-                  <p className="text-slate-700 mb-6 line-clamp-3">
+                  <p className="text-slate-700 mb-6 line-clamp-3 group-hover:text-slate-800 transition-colors">
                     {blog.excerpt}
                   </p>
 
                   {/* Meta Information */}
-                  <div className="flex items-center justify-between text-sm text-slate-600 mb-4">
+                  <div className="flex items-center justify-between text-sm text-slate-700 group-hover:text-slate-800 transition-colors mb-4">
                     <div className="flex items-center space-x-3">
                       <div className="flex items-center">
                         <User className="w-4 h-4 mr-1" />
@@ -171,14 +171,14 @@ const AllBlogs = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center text-sm text-slate-600 mb-4">
+                  <div className="flex items-center text-sm text-slate-700 group-hover:text-slate-800 transition-colors mb-4">
                     <Calendar className="w-4 h-4 mr-1" />
                     {blog.date}
                   </div>
 
                   {/* Read More Link */}
                   <div className="flex items-center justify-between">
-                    <span className="text-blue-600 font-medium group-hover:translate-x-2 transition-transform">
+                    <span className="inline-flex items-center text-blue-700 hover:text-blue-900 font-semibold group-hover:translate-x-1 transition-all">
                       Read More
                     </span>
                     <ArrowUpRight className="w-5 h-5 text-blue-600 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

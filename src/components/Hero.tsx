@@ -27,7 +27,7 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary mb-6">
             <Zap className="w-4 h-4 mr-2" />
-            <span className="text-sm font-medium">Next-Gen Cloud Solutions</span>
+            <span className="text-sm font-medium">Techiravan - Next-Gen Cloud Solutions</span>
           </div>
 
           {/* Main Heading */}
@@ -65,15 +65,15 @@ const Hero = () => {
           <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-border/50">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">99.9%</div>
-              <div className="text-sm text-muted-foreground">Uptime SLA</div>
+              <div className="text-sm text-white/80">Uptime SLA</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">1000+</div>
-              <div className="text-sm text-muted-foreground">Enterprise Clients</div>
+              <div className="text-sm text-white/80">Enterprise Clients</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">24/7</div>
-              <div className="text-sm text-muted-foreground">Expert Support</div>
+              <div className="text-sm text-white/80">Expert Support</div>
             </div>
           </div>
         </div>

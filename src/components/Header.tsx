@@ -23,7 +23,7 @@ const Header = () => {
             <img
               src="/lovable-uploads/9049b2d2-59df-4d9a-a7f0-2931346bf2a8.png"
               alt="Technavan Logo"
-              className="h-12 w-auto"
+              className="h-32 w-auto"
             />
           </div>
 
