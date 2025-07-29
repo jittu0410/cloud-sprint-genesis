@@ -43,7 +43,7 @@ const ContactForm = () => {
             <input
               id="name"
               type="text"
-              name="user_name"
+              name="name"
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-md"
               placeholder="Your name"
@@ -56,7 +56,7 @@ const ContactForm = () => {
             <input
               id="email"
               type="email"
-              name="user_email"
+              name="email"
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-md"
               placeholder="your.email@example.com"
@@ -72,7 +72,7 @@ const ContactForm = () => {
             <input
               id="phone"
               type="tel"
-              name="user_phone"
+              name="phone"
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-md"
               placeholder="+1 (555 ) 123-4567"
@@ -85,7 +85,7 @@ const ContactForm = () => {
             <input
               id="company"
               type="text"
-              name="user_company"
+              name="company"
               className="w-full px-4 py-2 border border-gray-300 rounded-.md"
               placeholder="Your company (optional)"
             />
