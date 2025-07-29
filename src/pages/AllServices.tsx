@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { ArrowRight } from 'lucide-react';
 
 const AllServices = () => {
   const navigate = useNavigate();
@@ -122,12 +123,6 @@ const AllServices = () => {
         {/* Hero Section */}
         <section className="py-20 relative overflow-hidden">
           {/* Cloud Network Background Image */}
-          <img
-            src="/cloud-bg.jpg"
-            alt="Cloud Network Background"
-            className="absolute inset-0 w-full h-full object-cover opacity-90 z-0"
-            style={{ pointerEvents: 'none' }}
-          />
           <div className="absolute inset-0 bg-gradient-hero opacity-80 z-10"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
             <div className="text-center mb-16">
@@ -147,26 +142,24 @@ const AllServices = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <div
-                  key={service.name}
-                  className="cloud-card card-3d group relative flex flex-col h-80 bg-white/95 hover:bg-white transition-all duration-300 shadow-lg hover:shadow-2xl border border-white/20"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                <div 
+                  key={index} 
+                  className="group relative overflow-hidden rounded-2xl border border-border/30 bg-card p-6 shadow-sm transition-all hover:shadow-md"
                 >
-                  <div className="relative z-10 h-full flex flex-col">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4 group-hover:bg-blue-200 transition-colors">
-                        <service.icon className="w-6 h-6 text-blue-600" />
-                      </div>
-                      <h3 className="text-xl font-semibold line-clamp-2 text-slate-800 group-hover:text-blue-800 transition-colors">{service.name}</h3>
+                  <div className="relative z-10">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <service.icon className="h-6 w-6" />
                     </div>
-                    <p className="text-slate-700 mb-4 group-hover:text-slate-800 transition-colors">{service.description}</p>
-                    <p className="text-sm text-slate-600 mb-6 flex-grow group-hover:text-slate-700 transition-colors">{service.longDescription}</p>
-                    <div className="flex items-center text-blue-700 hover:text-blue-900 font-semibold group-hover:translate-x-1 transition-all">
-                      Learn More 
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
+                    <h3 className="mb-2 text-xl font-semibold text-foreground">{service.name}</h3>
+                    <p className="mb-4 text-muted-foreground">{service.description}</p>
+                    <Button 
+                      variant="outline" 
+                      className="mt-2 group-hover:bg-primary/10"
+                      onClick={() => navigate(`/services#${service.name.toLowerCase().replace(/\s+/g, '-')}`)}
+                    >
+                      Learn more
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Button>
                   </div>
                 </div>
               ))}

@@ -1,22 +1,14 @@
-import { useState, useEffect } from 'react';
-import emailjs from '@emailjs/browser';
+import { useState } from 'react';
 
-const EMAILJS_SERVICE_ID = 'service_sf6qql7';
-const EMAILJS_TEMPLATE_ID = 'template_drxlryk';
-const EMAILJS_PUBLIC_KEY = 'UUgum2UZtNufPocnU';
-
-// Initialize EmailJS
-emailjs.init(EMAILJS_PUBLIC_KEY);
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  message: string;
+}
 
 const ContactForm = () => {
-  interface FormData {
-    name: string;
-    email: string;
-    phone: string;
-    company: string;
-    message: string;
-  }
-
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -24,8 +16,9 @@ const ContactForm = () => {
     company: '',
     message: ''
   });
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{success: boolean; message: string} | null>(null);
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -41,96 +34,88 @@ const ContactForm = () => {
     
     setIsSubmitting(true);
     setSubmitStatus(null);
+    console.log('Form submission started', formData);
 
     try {
-      // Prepare template parameters
-      const templateParams = {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        company: formData.company,
-        to_email: 'jithenderkanna@gmail.com',
-        reply_to: formData.email
-      };
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '5afece25-8b24-494b-94e6-cb460e705c98',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          message: formData.message,
+          subject: `New Contact Form Submission from ${formData.name}`,
+          from_name: formData.name,
+        })
+      }); 
 
-      console.log('Sending email with params:', templateParams);
+      console.log('Response status:', response.status);
+      const result = await response.json();
+      console.log('Response data:', result);
 
-      try {
-        console.log('Sending contact form submission...');
-        console.log('Using service ID:', EMAILJS_SERVICE_ID);
-        console.log('Using template ID:', EMAILJS_TEMPLATE_ID);
-        
-        const result = await emailjs.send(
-          EMAILJS_SERVICE_ID,
-          EMAILJS_TEMPLATE_ID,
-          templateParams,
-          EMAILJS_PUBLIC_KEY
-        );
-        console.log('Email sent successfully:', result);
-      } catch (error) {
-        console.error('Email sending failed:', {
-          error: error,
-          message: error.message,
-          response: error.response
+      if (result.success) {
+        setSubmitStatus('success');
+        console.log('Form submitted successfully!');
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          message: ''
         });
-        throw error;
+      } else {
+        console.error('Form submission failed:', result);
+        setSubmitStatus('error');
       }
-
-      setSubmitStatus({
-        success: true,
-        message: 'Thank you for your message! We will get back to you soon.'
-      });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        message: ''
-      });
     } catch (error) {
-      console.error('Failed to send email:', error);
-      setSubmitStatus({
-        success: false,
-        message: error instanceof Error ? error.message : 'Failed to send message. Please try again later.'
-      });
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white/95 rounded-xl shadow-lg border border-white/20">
-      <h2 className="text-2xl font-bold mb-6 text-center">Contact Us</h2>
+    <div className="max-w-2xl mx-auto p-6 bg-[#F8F6F0] rounded-xl shadow-lg border border-[#2C2C2C]/10">
+      <h2 className="text-3xl font-bold mb-6 text-center text-[#2C2C2C]">Contact Us</h2>
       
-      {submitStatus && (
-        <div 
-          className={`mb-6 p-4 rounded-md ${
-            submitStatus.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-          }`}
-        >
-          {submitStatus.message}
+      {/* Success Message */}
+      {submitStatus === 'success' && (
+        <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
+          ✅ Thank you! Your message has been sent successfully. We'll get back to you soon!
+        </div>
+      )}
+
+      {/* Error Message */}
+      {submitStatus === 'error' && (
+        <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-md">
+          ❌ Sorry, there was an error sending your message. Please try again.
         </div>
       )}
       
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-            Name <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            required
-          />
-        </div>
-        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Your name"
+            />
+          </div>
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
               Email <span className="text-red-500">*</span>
@@ -141,15 +126,17 @@ const ContactForm = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              autoComplete="email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               required
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="your.email@example.com"
             />
           </div>
-
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-              Phone <span className="text-red-500">*</span>
+              Phone Number <span className="text-red-500">*</span>
             </label>
             <input
               type="tel"
@@ -157,51 +144,48 @@ const ContactForm = () => {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              autoComplete="tel"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               required
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="+1 (555) 123-4567"
             />
           </div>
-        </div>
-
-        <div>
-          <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
-            Company Name <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            id="company"
-            name="company"
-            value={formData.company}
-            onChange={handleChange}
-            autoComplete="organization"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            required
-          />
+          <div>
+            <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+              Company
+            </label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              value={formData.company}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Your company (optional)"
+            />
+          </div>
         </div>
         
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-            How can we help you? <span className="text-red-500">*</span>
+            Message <span className="text-red-500">*</span>
           </label>
           <textarea
             id="message"
             name="message"
-            rows={4}
+            rows={5}
             value={formData.message}
             onChange={handleChange}
-            placeholder="Tell us about your project or inquiry..."
-            autoComplete="off"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             required
-          />
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            placeholder="How can we help you?"
+          ></textarea>
         </div>
         
         <div>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-[#D4AF37] hover:bg-[#2C2C2C] text-[#2C2C2C] hover:text-[#F8F6F0] font-semibold py-2 px-4 rounded-md transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? 'Sending...' : 'Send Message'}
           </button>

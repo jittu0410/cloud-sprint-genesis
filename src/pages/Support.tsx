@@ -26,7 +26,7 @@ const Support = () => {
     setSuccess(false);
     // WhatsApp
     const waMsg = `Name: ${form.name}%0AEmail: ${form.email}%0ACompany: ${form.company}%0ACountry: ${form.country}%0APhone: ${form.phone}`;
-    window.open(`https://wa.me/919347376755?text=${waMsg}`, '_blank');
+    window.open(`https://wa.me/919121396814?text=${waMsg}`, '_blank');
     // Email (mailto fallback)
     const mailBody = `Name: ${form.name}%0AEmail: ${form.email}%0ACompany: ${form.company}%0ACountry: ${form.country}%0APhone: ${form.phone}`;
     window.open(`mailto:jithenderkanna@gmail.com?subject=Demo%20Request&body=${mailBody}`, '_blank');

@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Twitter, Linkedin, Github, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -21,22 +21,14 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Facebook, href: '#', label: 'Facebook' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/105367148', label: 'LinkedIn' },
+    { icon: Instagram, href: 'https://www.instagram.com/techiravan/', label: 'Instagram' },
   ];
 
   return (
-    <footer id="contact" className="relative bg-card/50 backdrop-blur-sm border-t border-border overflow-hidden">
-      {/* Cloud Network Background Image */}
-      <img
-        src="/cloud-bg.jpg"
-        alt="Cloud Network Background"
-        className="absolute inset-0 w-full h-full object-cover opacity-90 z-0"
-        style={{ pointerEvents: 'none' }}
-      />
-      <div className="absolute inset-0 bg-gradient-hero opacity-80 z-10"></div>
+    <footer id="contact" className="relative border-t border-border overflow-hidden bg-gradient-to-br from-background via-background/98 to-primary/5">
+      {/* Removed background image and adjusted gradient */}
+      <div className="absolute inset-0 bg-background/90 z-10"></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -57,18 +49,21 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6 text-foreground">Contact</h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-primary" />
-                <span className="text-muted-foreground">info@technavan.com</span>
+                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
+                <a href="mailto:info@techiravan.com" className="text-muted-foreground hover:text-primary transition-colors">
+                  info@techiravan.com
+                </a>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-primary" />
-                <span className="text-muted-foreground">+1 (555) 123-4567</span>
+                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
+                <a href="tel:+919121396814" className="text-muted-foreground hover:text-primary transition-colors">
+                  +91 91213 96814
+                </a>
               </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-primary" />
+              <div className="flex items-start space-x-3">
+                <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-muted-foreground">
-                  123 Cloud Street<br />
-                  Tech City, TC 12345
+                  Hyderabad, Telangana 500098
                 </span>
               </div>
             </div>
@@ -116,7 +111,7 @@ const Footer = () => {
         <div className="border-t border-border mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-muted-foreground text-sm">
-              © 2024 Technavan. All rights reserved.
+              2024 Techiravan. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">

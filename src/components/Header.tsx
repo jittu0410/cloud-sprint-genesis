@@ -22,8 +22,8 @@ const Header = () => {
           <div className="flex-shrink-0">
             <img
               src="/lovable-uploads/9049b2d2-59df-4d9a-a7f0-2931346bf2a8.png"
-              alt="Technavan Logo"
-              className="h-32 w-auto"
+              alt="Techiravan Logo"
+              className="h-40 w-auto transition-all duration-300 hover:scale-105"
             />
           </div>
 

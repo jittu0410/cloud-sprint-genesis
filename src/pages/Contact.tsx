@@ -1,15 +1,8 @@
-import { useEffect } from 'react';
-import emailjs from '@emailjs/browser';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 
 const Contact = () => {
-  useEffect(() => {
-    // Initialize EmailJS with your public key
-    emailjs.init('UUgum2UZtNufPocnU');
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
       <Header />

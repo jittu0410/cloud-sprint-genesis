@@ -4,16 +4,8 @@ import { ArrowRight, Cloud, Zap, Shield } from 'lucide-react';
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center cloud-bg overflow-hidden">
-      {/* Custom Cloud Network Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/cloud-bg.jpg"
-          alt="Cloud Network Background"
-          className="w-full h-full object-cover"
-          style={{ pointerEvents: 'none' }}
-        />
-      </div>
-      <div className="absolute inset-0 z-10 bg-gradient-hero opacity-80"></div>
+      {/* Background with gradient */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-background to-primary/20"></div>
       
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden">

@@ -2,20 +2,15 @@ import { scrollImages } from '@/assets/scroll-images';
 
 const ServicesSection = () => {
   return (
-    <section
-      id="services"
-      className="py-20 relative overflow-hidden"
-    >
-      <div className="absolute inset-0 bg-gradient-to-b from-[#181a2a99] to-[#181a2a66] opacity-10 z-10 pointer-events-none"></div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="services" className="relative py-20 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Our <span className="gradient-text">Cloud Services</span>
+            Our <span className="gradient-text">Services</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive cloud solutions designed to accelerate your digital transformation 
-            and drive business growth.
+            Comprehensive cloud solutions tailored to your business needs
           </p>
         </div>
         {/* Animated Images Banner */}
