@@ -99,7 +99,6 @@ const AllBlogs = () => {
         {/* Hero Section */}
         <section className="py-20 relative overflow-hidden">
           {/* Cloud Network Background Image */}
-          <div className="absolute inset-0 bg-gradient-hero opacity-80 z-10"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
             <div className="text-center mb-16">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -184,16 +183,19 @@ const AllBlogs = () => {
             {/* Back to Home */}
             <div className="text-center mt-16">
               <Link to="/">
-                <Button variant="outline" className="mr-4">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white hover:text-white/90 transition-colors mr-4">
                   ← Back to Home
                 </Button>
               </Link>
               <Link to="/services">
-                <Button variant="outline" className="mr-4">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white hover:text-white/90 transition-colors mr-4">
                   Go to Services
                 </Button>
               </Link>
-              <Button className="btn-hero" onClick={() => navigate('/support')}>
+              <Button 
+                className="bg-blue-600 hover:bg-blue-700 text-white hover:text-white/90 transition-colors" 
+                onClick={() => navigate('/contact')}
+              >
                 Contact Us for Custom Solutions
               </Button>
             </div>

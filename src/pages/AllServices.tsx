@@ -4,6 +4,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ArrowRight } from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
+
+interface Service {
+  icon: LucideIcon;
+  name: string;
+  description: string;
+  bgImage: string | null;
+  longDescription: string;
+  category: string;
+}
 
 const AllServices = () => {
   const navigate = useNavigate();
@@ -13,105 +23,120 @@ const AllServices = () => {
       name: 'Cloud Migration Services', 
       description: 'Seamless cloud transformation and migration strategies',
       bgImage: '/lovable-uploads/37ed4a76-92b1-4596-a95f-84b5b62aae84.png',
-      longDescription: 'Comprehensive cloud migration services to help your business transition smoothly to the cloud with minimal downtime and maximum efficiency.'
+      longDescription: 'Comprehensive cloud migration services to help your business transition smoothly to the cloud with minimal downtime and maximum efficiency.',
+      category: 'Migration'
     },
     { 
       icon: Settings, 
       name: 'DevOps Services', 
       description: 'Streamlined development operations and CI/CD pipelines',
       bgImage: '/lovable-uploads/4c51e056-8847-49c6-b669-3971f0e13cbb.png',
-      longDescription: 'End-to-end DevOps solutions including automation, continuous integration, and deployment strategies that accelerate your development lifecycle.'
+      longDescription: 'End-to-end DevOps solutions including automation, continuous integration, and deployment strategies that accelerate your development lifecycle.',
+      category: 'DevOps'
     },
     { 
       icon: Container, 
       name: 'Kubernetes Consulting & Managed Services', 
       description: 'Expert container orchestration and management',
       bgImage: null,
-      longDescription: 'Professional Kubernetes consulting and managed services to help you deploy, scale, and manage containerized applications efficiently.'
+      longDescription: 'Professional Kubernetes consulting and managed services to help you deploy, scale, and manage containerized applications efficiently.',
+      category: 'Containers'
     },
     { 
       icon: BarChart3, 
       name: 'Cloud Optimization Consulting', 
       description: 'Performance and cost optimization strategies',
       bgImage: '/lovable-uploads/20fc19c8-af55-43a2-970a-a678465a58ee.png',
-      longDescription: 'Data-driven cloud optimization services to reduce costs, improve performance, and maximize your cloud infrastructure ROI.'
+      longDescription: 'Data-driven cloud optimization services to reduce costs, improve performance, and maximize your cloud infrastructure ROI.',
+      category: 'Optimization'
     },
     { 
       icon: Activity, 
       name: 'SRE (24/7)', 
       description: 'Site reliability engineering and monitoring',
       bgImage: null,
-      longDescription: '24/7 site reliability engineering services ensuring maximum uptime, performance monitoring, and incident response for your critical systems.'
+      longDescription: '24/7 site reliability engineering services ensuring maximum uptime, performance monitoring, and incident response for your critical systems.',
+      category: 'Reliability'
     },
     { 
       icon: Brain, 
       name: 'AI/Gen AI Cloud Services', 
       description: 'Intelligent cloud automation and AI integration',
       bgImage: '/lovable-uploads/273697eb-35a9-455e-9ac0-c0e30db63656.png',
-      longDescription: 'Cutting-edge AI and generative AI cloud services to automate processes, enhance decision-making, and drive innovation in your business.'
+      longDescription: 'Cutting-edge AI and generative AI cloud services to automate processes, enhance decision-making, and drive innovation in your business.',
+      category: 'AI/ML'
     },
     { 
       icon: Layers, 
       name: 'Multi-cloud & Hybrid Cloud Management', 
       description: 'Unified cloud orchestration across platforms',
       bgImage: '/lovable-uploads/6f8c5bad-f830-4a3a-8075-792eb5e116d8.png',
-      longDescription: 'Comprehensive multi-cloud and hybrid cloud management solutions for seamless integration across different cloud providers.'
+      longDescription: 'Comprehensive multi-cloud and hybrid cloud management solutions for seamless integration across different cloud providers.',
+      category: 'Hybrid Cloud'
     },
     { 
       icon: BarChart3, 
       name: 'FinOps & Cloud Cost Optimize', 
       description: 'Financial operations and cost management for cloud',
       bgImage: '/lovable-uploads/20fc19c8-af55-43a2-970a-a678465a58ee.png',
-      longDescription: 'Strategic FinOps practices and cloud cost optimization to maximize your cloud investment and maintain budget control.'
+      longDescription: 'Strategic FinOps practices and cloud cost optimization to maximize your cloud investment and maintain budget control.',
+      category: 'FinOps'
     },
     { 
       icon: Zap, 
       name: 'Edge Computing', 
       description: 'Distributed computing solutions at the edge',
       bgImage: '/lovable-uploads/10028ffc-e514-43a8-8a79-0286ec10c05f.png',
-      longDescription: 'Advanced edge computing solutions bringing processing power closer to data sources for reduced latency and improved performance.'
+      longDescription: 'Advanced edge computing solutions bringing processing power closer to data sources for reduced latency and improved performance.',
+      category: 'Edge'
     },
     { 
       icon: GitBranch, 
       name: 'Low Code and No Code Cloud Solution', 
       description: 'Rapid application development platforms',
       bgImage: '/lovable-uploads/187c0482-934b-4af5-a052-c6ddda4b317b.png',
-      longDescription: 'Innovative low-code and no-code cloud solutions enabling rapid application development and digital transformation.'
+      longDescription: 'Innovative low-code and no-code cloud solutions enabling rapid application development and digital transformation.',
+      category: 'Development'
     },
     { 
       icon: Shield, 
       name: 'Data Security', 
       description: 'Advanced data protection and cybersecurity',
       bgImage: '/lovable-uploads/a75e8ec0-6948-4e16-977a-2c622a496439.png',
-      longDescription: 'Comprehensive data security solutions including encryption, access control, compliance, and threat protection for your cloud assets.'
+      longDescription: 'Comprehensive data security solutions including encryption, access control, compliance, and threat protection for your cloud assets.',
+      category: 'Security'
     },
     { 
       icon: Archive, 
       name: 'Disaster Recovery and Backup', 
       description: 'Business continuity and data protection solutions',
       bgImage: null,
-      longDescription: 'Robust disaster recovery and backup solutions ensuring business continuity and data protection against any unforeseen circumstances.'
+      longDescription: 'Robust disaster recovery and backup solutions ensuring business continuity and data protection against any unforeseen circumstances.',
+      category: 'Backup'
     },
     { 
       icon: Server, 
       name: 'Serverless Architecture/Computing', 
       description: 'Event-driven cloud functions and serverless solutions',
       bgImage: '/lovable-uploads/fa0a405d-90ce-44dd-9155-2f21e8c7a562.png',
-      longDescription: 'Modern serverless architecture solutions enabling scalable, cost-effective, and event-driven application development.'
+      longDescription: 'Modern serverless architecture solutions enabling scalable, cost-effective, and event-driven application development.',
+      category: 'Serverless'
     },
     { 
       icon: HardDrive, 
       name: 'Quantum Computing', 
       description: 'Next-generation quantum processing solutions',
       bgImage: '/lovable-uploads/909319b9-6e92-445d-a213-0dfeb7f5d8cb.png',
-      longDescription: 'Cutting-edge quantum computing services and consulting to prepare your business for the next revolution in computing power.'
+      longDescription: 'Cutting-edge quantum computing services and consulting to prepare your business for the next revolution in computing power.',
+      category: 'Quantum'
     },
     { 
       icon: Network, 
       name: 'Rise of Industry-Specific Cloud Platform', 
       description: 'Tailored industry-specific cloud solutions',
       bgImage: null,
-      longDescription: 'Specialized cloud platforms designed for specific industries, addressing unique challenges and regulatory requirements.'
+      longDescription: 'Specialized cloud platforms designed for specific industries, addressing unique challenges and regulatory requirements.',
+      category: 'Industry'
     },
   ];
 
@@ -123,7 +148,6 @@ const AllServices = () => {
         {/* Hero Section */}
         <section className="py-20 relative overflow-hidden">
           {/* Cloud Network Background Image */}
-          <div className="absolute inset-0 bg-gradient-hero opacity-80 z-10"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
             <div className="text-center mb-16">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -144,22 +168,32 @@ const AllServices = () => {
               {services.map((service, index) => (
                 <div 
                   key={index} 
-                  className="group relative overflow-hidden rounded-2xl border border-border/30 bg-card p-6 shadow-sm transition-all hover:shadow-md"
+                  className="cloud-card card-3d group cursor-pointer bg-white/95 hover:bg-white transition-all duration-300 shadow-lg hover:shadow-2xl rounded-xl p-6 border border-white/20"
+                  onClick={() => navigate(`/services#${service.name.toLowerCase().replace(/\s+/g, '-')}`)}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="relative z-10">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                      <service.icon className="h-6 w-6" />
+                  {/* Category Badge */}
+                  <div className="flex justify-end mb-4">
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-medium group-hover:bg-blue-200 transition-colors">
+                      {service.category || 'Service'}
                     </div>
-                    <h3 className="mb-2 text-xl font-semibold text-foreground">{service.name}</h3>
-                    <p className="mb-4 text-muted-foreground">{service.description}</p>
-                    <Button 
-                      variant="outline" 
-                      className="mt-2 group-hover:bg-primary/10"
-                      onClick={() => navigate(`/services#${service.name.toLowerCase().replace(/\s+/g, '-')}`)}
-                    >
-                      Learn more
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Button>
+                  </div>
+                  
+                  {/* Service Content */}
+                  <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-800 transition-colors">
+                    {service.name}
+                  </h3>
+                  
+                  <p className="text-slate-700 mb-6 line-clamp-3 group-hover:text-slate-800 transition-colors">
+                    {service.description}
+                  </p>
+
+                  {/* Learn More Button */}
+                  <div className="flex items-center justify-between">
+                    <span className="inline-flex items-center text-blue-700 hover:text-blue-900 font-semibold group-hover:translate-x-1 transition-all">
+                      Learn More
+                    </span>
+                    <ArrowRight className="w-5 h-5 text-blue-600 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </div>
                 </div>
               ))}
@@ -168,11 +202,14 @@ const AllServices = () => {
             {/* Back to Home */}
             <div className="text-center mt-16">
               <Link to="/">
-                <Button variant="outline" className="mr-4">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white hover:text-white/90 transition-colors mr-4">
                   ← Back to Home
                 </Button>
               </Link>
-              <Button className="btn-hero" onClick={() => navigate('/support')}>
+              <Button 
+                className="bg-blue-600 hover:bg-blue-700 text-white hover:text-white/90 transition-colors" 
+                onClick={() => navigate('/contact')}
+              >
                 Contact Us for Custom Solutions
               </Button>
             </div>

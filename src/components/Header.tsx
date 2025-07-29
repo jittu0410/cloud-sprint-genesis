@@ -14,7 +14,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-slate-200/95 backdrop-blur-md border-b border-border/30">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#F8F6F0] backdrop-blur-md border-b border-light-gray/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="flex items-center h-16">
@@ -23,7 +23,7 @@ const Header = () => {
             <img
               src="/lovable-uploads/9049b2d2-59df-4d9a-a7f0-2931346bf2a8.png"
               alt="Techiravan Logo"
-              className="h-40 w-auto transition-all duration-300 hover:scale-105"
+              className="h-20 w-auto transition-all duration-300 hover:scale-105"
             />
           </div>
 
@@ -47,12 +47,6 @@ const Header = () => {
                 className="text-slate-800 hover:text-primary transition-colors duration-300 font-medium"
               >
                 Blogs
-              </Link>
-              <Link
-                to="/support"
-                className="text-slate-800 hover:text-primary transition-colors duration-300 font-medium"
-              >
-                Support
               </Link>
               <Link
                 to="/contact"
@@ -101,13 +95,6 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Blogs
-              </Link>
-              <Link
-                to="/support"
-                className="block px-3 py-2 text-slate-800 hover:text-primary transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Support
               </Link>
               <Link
                 to="/contact"

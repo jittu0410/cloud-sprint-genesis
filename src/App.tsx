@@ -12,7 +12,6 @@ import Index from "./pages/Index";
 import AllServices from "./pages/AllServices";
 import AllBlogs from "./pages/AllBlogs";
 import NotFound from "./pages/NotFound";
-import Support from "./pages/Support";
 import Contact from "./pages/Contact";
 import ScrollToTop from "@/components/ScrollToTop";
 import ThankYou from './pages/thank-you'; // Your import is correct
@@ -42,7 +41,6 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<AllServices />} />
             <Route path="/blogs" element={<AllBlogs />} />
-            <Route path="/support" element={<Support />} />
             <Route path="/contact" element={<Contact />} />
             
             {/* THIS IS THE FIX: Add the route for your thank you page */}

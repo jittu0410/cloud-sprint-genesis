@@ -33,7 +33,7 @@ const Index = () => {
           <Button
             className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-10 py-4 rounded-lg shadow-lg transition-all duration-200 mb-4"
             style={{ fontWeight: 'bold', fontSize: '1.25rem' }}
-            onClick={() => navigate('/support')}
+            onClick={() => navigate('/contact')}
           >
             SCHEDULE A FREE CALL
           </Button>

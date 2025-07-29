@@ -26,16 +26,14 @@ const Footer = () => {
   ];
 
   return (
-    <footer id="contact" className="relative border-t border-border overflow-hidden bg-gradient-to-br from-background via-background/98 to-primary/5">
-      {/* Removed background image and adjusted gradient */}
-      <div className="absolute inset-0 bg-background/90 z-10"></div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-20">
+    <footer id="contact" className="relative border-t border-light-gray/30 overflow-hidden bg-[#F8F6F0]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
             <div>
               <h2 className="text-lg font-semibold mb-6 text-white">
-                Techiravan
+                <span className="text-black">Techiravan</span>
               </h2>
               <p className="text-muted-foreground">
                 Leading provider of innovative cloud services and solutions, 
