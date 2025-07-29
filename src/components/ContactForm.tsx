@@ -19,7 +19,7 @@ const ContactForm = () => {
         <input 
           type="hidden" 
           name="_next" 
-          value="http://localhost:8080/thank-you" // <-- PASTE YOUR URL HERE
+          value="/thank-you" // <-- PASTE YOUR URL HERE
         />
 
         {/* The rest of the form fields */}
