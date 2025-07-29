@@ -1,3 +1,5 @@
+// src/App.tsx
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -13,6 +15,7 @@ import NotFound from "./pages/NotFound";
 import Support from "./pages/Support";
 import Contact from "./pages/Contact";
 import ScrollToTop from "@/components/ScrollToTop";
+import ThankYou from './pages/thank-you'; // Your import is correct
 
 const queryClient = new QueryClient();
 
@@ -32,21 +35,25 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/services" element={<AllServices />} />
-          <Route path="/blogs" element={<AllBlogs />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/contact" element={<Contact />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/services" element={<AllServices />} />
+            <Route path="/blogs" element={<AllBlogs />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/contact" element={<Contact />} />
+            
+            {/* THIS IS THE FIX: Add the route for your thank you page */}
+            <Route path="/thank-you" element={<ThankYou />} />
+
+            {/* The catch-all route must always be last */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
   );
 };
 

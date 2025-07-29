@@ -54,12 +54,12 @@ const Header = () => {
               >
                 Support
               </Link>
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="text-slate-800 hover:text-primary transition-colors duration-300 font-medium"
               >
                 Contact
-              </a>
+              </Link>
             </nav>
           </div>
 
@@ -109,13 +109,13 @@ const Header = () => {
               >
                 Support
               </Link>
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="block px-3 py-2 text-slate-800 hover:text-primary transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
-              </a>
+              </Link>
 
             </div>
           </div>
