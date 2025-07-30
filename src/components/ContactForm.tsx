@@ -4,7 +4,7 @@ const ContactForm = () => {
       <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Contact Us</h2>
       
       <form
-        action="https://formspree.io/f/mwpqbjbj"
+        action="https://formspree.io/f/xldllerd"
         method="POST"
         className="space-y-6"
       >
